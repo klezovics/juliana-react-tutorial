@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const useTodos = () => {
     const [todos, setTodos] = useState([]);
@@ -9,16 +10,11 @@ const useTodos = () => {
         // Define the URL to the JSONPlaceholder todos endpoint
         const apiUrl = 'https://jsonplaceholder.typicode.com/todos';
 
-        // Fetch data from the API
-        fetch(apiUrl)
+        // Fetch data from the API using Axios
+        axios
+            .get(apiUrl)
             .then((response) => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then((data) => {
-                setTodos(data);
+                setTodos(response.data);
                 setLoading(false);
             })
             .catch((err) => {
