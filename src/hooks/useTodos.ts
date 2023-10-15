@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { fetchTodos } from '../api/todosApi'; // Import the fetchTodos function
 
 const useTodos = () => {
     const [todos, setTodos] = useState([]);
@@ -7,14 +7,9 @@ const useTodos = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        // Define the URL to the JSONPlaceholder todos endpoint
-        const apiUrl = 'https://jsonplaceholder.typicode.com/todos';
-
-        // Fetch data from the API using Axios
-        axios
-            .get(apiUrl)
-            .then((response) => {
-                setTodos(response.data);
+        fetchTodos() // Use the fetchTodos function
+            .then((data) => {
+                setTodos(data);
                 setLoading(false);
             })
             .catch((err) => {
