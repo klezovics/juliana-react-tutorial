@@ -3,7 +3,7 @@ import request from "superagent";
 
 const apiUrl = 'https://jsonplaceholder.typicode.com/todos';
 
-// As a basis you need to understand this: https://youtu.be/vn3tm0quoqE?si=E36ok0YmMJzYInja
+// As a basis you need to understand async javascript: https://youtu.be/vn3tm0quoqE?si=E36ok0YmMJzYInja
 export const fetchTodos = async () => {
     try {
         const response = await axios.get(apiUrl);
