@@ -2,6 +2,7 @@ import axios from 'axios';
 import request from "superagent";
 
 // TODO: Add react query code here to cache data
+// Also, give 3 compelling use cases for using react query
 
 const apiUrl = 'https://jsonplaceholder.typicode.com/todos';
 
