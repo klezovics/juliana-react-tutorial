@@ -7,6 +7,7 @@ const apiUrl = 'https://jsonplaceholder.typicode.com/todos';
 export const fetchTodos = async () => {
     try {
         const response = await axios.get(apiUrl);
+        console.log("Data from axios", response.data);
         return response.data;
     } catch (error) {
         throw error;
@@ -22,6 +23,7 @@ export const fetchTodosWithFetchApi = async () => {
         }
 
         const data = await response.json();
+        console.log("Data from fetch", data);
         return data;
     } catch (error) {
         throw error;
@@ -31,6 +33,8 @@ export const fetchTodosWithFetchApi = async () => {
 export const fetchTodosUsingSuperagent = async () => {
     try {
         const response = await request.get(apiUrl);
+
+        console.log("Data from superagent", response.body);
         return response.body;
     } catch (error) {
         throw error;
