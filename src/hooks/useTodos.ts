@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react';
 import { fetchTodos } from '../api/todosApi'; // Import the fetchTodos function
 
 const useTodos = () => {
+
+    // Refactor
+
     const [todos, setTodos] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
