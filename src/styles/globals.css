@@ -105,3 +105,8 @@
 /*    color-scheme: dark;*/
 /*  }*/
 /*}*/
+
+.my-cool-class {
+    color: blue;
+    background-color: aqua;
+}
