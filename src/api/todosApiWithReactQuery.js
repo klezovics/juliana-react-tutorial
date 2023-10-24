@@ -15,3 +15,4 @@ export const fetchTodos = async () => {
         throw error;
     }
 };
+
