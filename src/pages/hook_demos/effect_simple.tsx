@@ -1,24 +1,14 @@
 import React, { useState, useEffect } from 'react';
-
+import axios from "axios";
 function TodoById() {
     const [todos, setTodos] = useState(null);
 
-    useEffect(() => {
-        fetch(`https://jsonplaceholder.typicode.com/todos/`)
-            .then((response) => response.json())
-            .then((data) => {
-                setTodos(data);
-            })
-            .catch((error) => {
-                console.log('Error fetching todo:', error);
-            });
+    useEffect(async () => {
+        // 1. Get response
+        const response = await axios.get('https://jsonplaceholder.typicode.com/todos/');
+        // 2. Set response
+        setTodos(response.data);
     }, []); // Run the effect whenever 'id' changes
-
-
-    // const handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     // 'id' will be updated by user input, triggering the useEffect.
-    // };
 
     return (
         <div>
