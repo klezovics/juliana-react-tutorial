@@ -2,14 +2,21 @@ import React, { useState, useEffect } from 'react';
 
 
 function MyComponentWithEffect() {
-    const [todos, setTodos] = useState(null);
-    const [message, setMessage] = useState("Juliana is hot chick!");
 
-    // const myEffect = () => {
-    //     console.log("Use effect is here!!!");
-    // }
+    console.log("Before use effect")
 
-    useEffect(() => {});
+    const runMyEffect = () => {
+        console.log("Running my effect")
+    }
+
+    // no arg -> run every time -> always -> ALMOST NEVER USED
+    // [] -> run once -> once -> When need to fetch data only once
+    // [x,y] -> run when x or y changes -> When something changes -> get order data by id
+
+    // useEffect 2 parts -> What to do ? When to do ?
+    useEffect(runMyEffect, []);
+
+    console.log("After use effect")
 
     return (
         <div>
