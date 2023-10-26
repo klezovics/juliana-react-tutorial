@@ -8,6 +8,10 @@ export const Page = () => {
 
     const {data, isLoading, isError} = useQuery("my-data", dataProvider)
 
+    if(!data) {
+        console.log("No data")
+    }
+
     return (
         <>
             <h1>Welcome to RQ!</h1>
