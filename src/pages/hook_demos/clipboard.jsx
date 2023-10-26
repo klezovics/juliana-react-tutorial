@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useCopyToClipboard } from "@uidotdev/usehooks";
+import {useCopyToClipboard} from "@uidotdev/usehooks";
 
 const randomHash = crypto.randomUUID();
 
@@ -17,14 +17,15 @@ const Page = () => {
                 <label>Fake API Key</label>
                 <pre>
           <code>{randomHash}</code>
-          <button
-              disabled={hasCopiedText}
-              className="link"
-              onClick={() => copyToClipboard(randomHash)}
-          >
-            {hasCopiedText ? checkIcon : copyIcon}
-          </button>
-        </pre>
+                </pre>
+
+                <button
+                    disabled={hasCopiedText}
+                    className="link"
+                    onClick={() => copyToClipboard(randomHash)}
+                >
+                    {hasCopiedText ? checkIcon : copyIcon}
+                </button>
             </article>
         </section>
     );
