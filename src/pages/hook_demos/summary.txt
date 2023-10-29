@@ -1,0 +1,13 @@
+Summary:
+- Hook contain business logic and are the "brain" of the component
+- Hook are functions
+- Everything is based on react hooks
+- Then you also have hook libraries
+- You can combine base react hooks with hook libraries to create your own custom hooks
+- Each hook provides some data values(reactive!!) and some functions
+
+How to get better at using hooks:
+- Practice using react hooks: useState, useEffect, useRef and maybe others
+- Look into 3 different hook libraries and try to using them
+- Try to create your own custom hooks
+- Try to write tests which test your hooks
