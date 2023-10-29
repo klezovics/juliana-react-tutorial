@@ -1,10 +1,17 @@
 import * as React from "react";
 import {useCopyToClipboard} from "@uidotdev/usehooks";
 
-const randomHash = crypto.randomUUID();
+const randomHash = "juliana is best programmer!"
 
 const checkIcon = "✅";
 const copyIcon = "📋";
+
+/*
+
+    3. Custom hooks -> which Juliana writes
+    2. Hook libraries -> based on react hooks
+    1. BASE -> react hooks.
+ */
 
 const Page = () => {
     const [copiedText, copyToClipboard] = useCopyToClipboard();
@@ -21,7 +28,6 @@ const Page = () => {
 
                 <button
                     disabled={hasCopiedText}
-                    className="link"
                     onClick={() => copyToClipboard(randomHash)}
                 >
                     {hasCopiedText ? checkIcon : copyIcon}
